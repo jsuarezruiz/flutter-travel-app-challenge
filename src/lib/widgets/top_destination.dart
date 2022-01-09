@@ -57,6 +57,7 @@ class TopDestination extends StatelessWidget {
                         style: const TextStyle(
                           fontFamily: 'RockoFLF',
                           color: Colors.grey,
+                          fontSize: 12,
                         ),
                       ),
                     ],

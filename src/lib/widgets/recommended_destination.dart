@@ -24,18 +24,18 @@ class RecommendedDestination extends StatelessWidget {
           right: 6,
           child: Container(
             decoration: BoxDecoration(
-              color: Colors.blue.withOpacity(0.7),
+              color: Colors.blue.withOpacity(0.6),
               borderRadius: BorderRadius.circular(10),
             ),
-            width: 70,
-            height: 30,
+            width: 72,
+            height: 36,
             child: Center(
               child: Text(
                 '\$' + destination.price.toStringAsFixed(0),
                 style: const TextStyle(
                   color: Colors.white,
                   fontFamily: 'RockoFLF',
-                  fontSize: 17,
+                  fontSize: 15,
                   fontWeight: FontWeight.bold,
                 ),
               ),
@@ -43,8 +43,8 @@ class RecommendedDestination extends StatelessWidget {
           ),
         ),
         Positioned(
-          bottom: 25,
-          left: 5,
+          bottom: 24,
+          left: 6,
           child: Padding(
             padding: const EdgeInsets.only(left: 10),
             child: Column(
@@ -59,7 +59,7 @@ class RecommendedDestination extends StatelessWidget {
                       color: Colors.white,
                       fontFamily: 'RockoFLF Bold',
                       fontWeight: FontWeight.bold,
-                      fontSize: 24,
+                      fontSize: 20,
                       shadows: [
                         Shadow(
                             color: Colors.black.withOpacity(0.25),
@@ -70,13 +70,13 @@ class RecommendedDestination extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(
-                  height: 3,
+                  height: 8,
                 ),
                 Text(
                   destination.place,
                   style: const TextStyle(
                     color: Colors.white,
-                    fontSize: 15,
+                    fontSize: 12,
                   ),
                 ),
               ],

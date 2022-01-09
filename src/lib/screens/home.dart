@@ -41,9 +41,8 @@ class _HomeState extends State<Home> {
                 children: [
                   buildProfileWidget(),
                   buildSearchWidget(),
-                  buildRecommendedWidget(
-                      destinationService.recommendedDestinations),
-                  buildTopWidget(destinationService.topDestinations),
+                  buildRecommendedWidget(),
+                  buildTopWidget(),
                 ],
               ),
             ),
@@ -111,7 +110,7 @@ class _HomeState extends State<Home> {
       child: Row(
         children: [
           const CircleAvatar(
-            radius: 30,
+            radius: 26,
             backgroundImage: AssetImage('images/profile.png'),
           ),
           Expanded(
@@ -172,7 +171,7 @@ class _HomeState extends State<Home> {
 
   Widget buildSearchWidget() {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 6),
+      padding: const EdgeInsets.symmetric(vertical: 12),
       child: Row(
         children: [
           const Expanded(
@@ -200,75 +199,85 @@ class _HomeState extends State<Home> {
     );
   }
 
-  Widget buildRecommendedWidget(List<Destination> destinations) {
+  Widget buildRecommendedWidget() {
+    List<Destination> recommendedDestinations =
+        destinationService.recommendedDestinations;
+
     return Padding(
-        padding: const EdgeInsets.only(top: 10, bottom: 10),
-        child: Column(
-          children: [
-            Padding(
-              padding: const EdgeInsets.symmetric(vertical: 6.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                crossAxisAlignment: CrossAxisAlignment.end,
-                children: const [
-                  Expanded(
-                    child: Text(
-                      'Recommended',
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontFamily: 'RockoFLF Bold',
-                        fontWeight: FontWeight.bold,
-                        fontSize: 24,
-                      ),
-                    ),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.only(
-                      left: 10.0,
-                    ),
-                    child: Icon(
-                      Icons.more_horiz,
-                      color: Colors.grey,
-                    ),
-                  ),
-                ],
-              ),
+      padding: const EdgeInsets.only(top: 10, bottom: 10),
+      child: Column(
+        children: [
+          Padding(
+            padding: const EdgeInsets.symmetric(
+              vertical: 6.0,
             ),
-            SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              child: Padding(
-                padding: const EdgeInsets.only(top: 10.0, bottom: 10),
-                child: Row(
-                  children: [
-                    for (Destination destination in destinations)
-                      GestureDetector(
-                        onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) =>
-                                  Details(destination: destination),
-                            ),
-                          );
-                        },
-                        child: Padding(
-                          padding: const EdgeInsets.only(
-                            right: 20.0,
-                          ),
-                          child: RecommendedDestination(
-                            destination: destination,
-                          ),
-                        ),
-                      ),
-                  ],
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              crossAxisAlignment: CrossAxisAlignment.end,
+              children: const [
+                Expanded(
+                  child: Text(
+                    'Recommended',
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontFamily: 'RockoFLF Bold',
+                      fontWeight: FontWeight.bold,
+                      fontSize: 24,
+                    ),
+                  ),
                 ),
+                Padding(
+                  padding: EdgeInsets.only(
+                    left: 10.0,
+                  ),
+                  child: Icon(
+                    Icons.more_horiz,
+                    color: Colors.grey,
+                  ),
+                ),
+              ],
+            ),
+          ),
+          SizedBox(
+            height: 260.0,
+            child: Padding(
+              padding: const EdgeInsets.only(top: 12.0),
+              child: ListView.builder(
+                scrollDirection: Axis.horizontal,
+                itemCount: recommendedDestinations.length,
+                itemBuilder: (BuildContext context, int index) {
+                  final Destination destination =
+                      recommendedDestinations[index];
+                  return GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) =>
+                              Details(destination: destination),
+                        ),
+                      );
+                    },
+                    child: Padding(
+                      padding: const EdgeInsets.only(
+                        right: 20.0,
+                      ),
+                      child: RecommendedDestination(
+                        destination: destination,
+                      ),
+                    ),
+                  );
+                },
               ),
             ),
-          ],
-        ));
+          ),
+        ],
+      ),
+    );
   }
 
-  Widget buildTopWidget(List<Destination> destinations) {
+  Widget buildTopWidget() {
+    List<Destination> topDestinations = destinationService.topDestinations;
     return Padding(
         padding: const EdgeInsets.only(top: 10, bottom: 10),
         child: Column(
@@ -281,12 +290,12 @@ class _HomeState extends State<Home> {
                 children: const [
                   Expanded(
                     child: Text(
-                      'Top Destinations',
+                      'Top Destination',
                       style: TextStyle(
                         color: Colors.black,
                         fontFamily: 'RockoFLF Bold',
                         fontWeight: FontWeight.bold,
-                        fontSize: 18,
+                        fontSize: 20,
                       ),
                     ),
                   ),
@@ -302,29 +311,36 @@ class _HomeState extends State<Home> {
                 ],
               ),
             ),
-            SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              child: Row(
-                children: [
-                  for (Destination destination in destinations)
-                    Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 8.0),
-                      child: GestureDetector(
-                        onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) =>
-                                  Details(destination: destination),
-                            ),
-                          );
-                        },
+            SizedBox(
+              height: 100.0,
+              child: Padding(
+                padding: const EdgeInsets.only(top: 12.0),
+                child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  itemCount: topDestinations.length,
+                  itemBuilder: (BuildContext context, int index) {
+                    final Destination destination = topDestinations[index];
+                    return GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) =>
+                                Details(destination: destination),
+                          ),
+                        );
+                      },
+                      child: Padding(
+                        padding: const EdgeInsets.only(
+                          right: 20.0,
+                        ),
                         child: TopDestination(
                           destination: destination,
                         ),
                       ),
-                    )
-                ],
+                    );
+                  },
+                ),
               ),
             ),
           ],

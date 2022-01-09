@@ -36,7 +36,7 @@ class Details extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               ClipRRect(
-                borderRadius: BorderRadius.circular(20),
+                borderRadius: BorderRadius.circular(30),
                 child: Image.asset(
                   destination.image,
                   height: 400,
@@ -288,7 +288,7 @@ class Details extends StatelessWidget {
 
   Widget buildBookWidget(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(top: 20.0),
+      padding: const EdgeInsets.only(top: 24.0),
       child: ConstrainedBox(
         constraints: BoxConstraints.tightFor(
           width: MediaQuery.of(context).size.width,
