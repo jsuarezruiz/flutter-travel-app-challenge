@@ -32,7 +32,7 @@ class RecommendedDestination extends StatelessWidget {
             child: Center(
               child: Text(
                 '\$' + destination.price.toStringAsFixed(0),
-                style: TextStyle(
+                style: const TextStyle(
                   color: Colors.white,
                   fontFamily: 'RockoFLF',
                   fontSize: 17,
@@ -51,7 +51,7 @@ class RecommendedDestination extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Container(
+                SizedBox(
                   width: 150,
                   child: Text(
                     destination.name,
@@ -63,18 +63,18 @@ class RecommendedDestination extends StatelessWidget {
                       shadows: [
                         Shadow(
                             color: Colors.black.withOpacity(0.25),
-                            offset: Offset(6, 6),
+                            offset: const Offset(6, 6),
                             blurRadius: 12),
                       ],
                     ),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 3,
                 ),
                 Text(
                   destination.place,
-                  style: TextStyle(
+                  style: const TextStyle(
                     color: Colors.white,
                     fontSize: 15,
                   ),

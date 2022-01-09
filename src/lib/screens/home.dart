@@ -34,7 +34,7 @@ class _HomeState extends State<Home> {
       children: [
         SingleChildScrollView(
           child: Container(
-            color: Color(0xfff6f8fb),
+            color: const Color(0xfff6f8fb),
             child: Padding(
               padding: const EdgeInsets.all(30.0),
               child: Column(
@@ -50,13 +50,13 @@ class _HomeState extends State<Home> {
           ),
         ),
         Container(
-          color: Color(0xfff6f8fb),
+          color: const Color(0xfff6f8fb),
         ),
         Container(
-          color: Color(0xfff6f8fb),
+          color: const Color(0xfff6f8fb),
         ),
         Container(
-          color: Color(0xfff6f8fb),
+          color: const Color(0xfff6f8fb),
         ),
       ],
     );
@@ -65,13 +65,11 @@ class _HomeState extends State<Home> {
   Widget buildTabBar(BuildContext context) {
     return Container(
       color: Colors.white,
-      padding: EdgeInsets.only(
-        left: 40,
-        right: 40,
-        bottom: 20,
-        top: 20,
+      padding: const EdgeInsets.symmetric(
+        horizontal: 40.0,
+        vertical: 20.0,
       ),
-      child: TabBar(
+      child: const TabBar(
         labelColor: Colors.blue,
         unselectedLabelColor: Colors.grey,
         indicatorSize: TabBarIndicatorSize.label,
@@ -112,7 +110,7 @@ class _HomeState extends State<Home> {
       padding: const EdgeInsets.only(bottom: 6.0),
       child: Row(
         children: [
-          CircleAvatar(
+          const CircleAvatar(
             radius: 30,
             backgroundImage: AssetImage('images/profile.png'),
           ),
@@ -121,7 +119,7 @@ class _HomeState extends State<Home> {
               padding: const EdgeInsets.only(left: 20),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
+                children: const [
                   Text(
                     'Welcome',
                     style: TextStyle(
@@ -131,7 +129,7 @@ class _HomeState extends State<Home> {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(top: 3),
+                    padding: EdgeInsets.only(top: 3),
                     child: Text(
                       'Arya Wijaya',
                       style: TextStyle(
@@ -148,7 +146,7 @@ class _HomeState extends State<Home> {
           ),
           Stack(
             children: [
-              Icon(
+              const Icon(
                 Icons.notifications,
                 size: 30,
                 color: Colors.grey,
@@ -159,7 +157,7 @@ class _HomeState extends State<Home> {
                 child: Container(
                   width: 12,
                   height: 12,
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     color: Colors.red,
                     shape: BoxShape.circle,
                   ),
@@ -177,13 +175,13 @@ class _HomeState extends State<Home> {
       padding: const EdgeInsets.symmetric(vertical: 6),
       child: Row(
         children: [
-          Expanded(
+          const Expanded(
             child: SearchBar(),
           ),
           Padding(
             padding: const EdgeInsets.only(left: 10),
             child: Container(
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 borderRadius: BorderRadius.all(
                   Radius.circular(8),
                 ),
@@ -191,7 +189,7 @@ class _HomeState extends State<Home> {
               ),
               width: 48,
               height: 48,
-              child: Icon(
+              child: const Icon(
                 Icons.settings_input_component,
                 color: Colors.white,
               ),
@@ -204,7 +202,7 @@ class _HomeState extends State<Home> {
 
   Widget buildRecommendedWidget(List<Destination> destinations) {
     return Padding(
-        padding: EdgeInsets.only(top: 10, bottom: 10),
+        padding: const EdgeInsets.only(top: 10, bottom: 10),
         child: Column(
           children: [
             Padding(
@@ -212,7 +210,7 @@ class _HomeState extends State<Home> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 crossAxisAlignment: CrossAxisAlignment.end,
-                children: [
+                children: const [
                   Expanded(
                     child: Text(
                       'Recommended',
@@ -225,7 +223,7 @@ class _HomeState extends State<Home> {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(
+                    padding: EdgeInsets.only(
                       left: 10.0,
                     ),
                     child: Icon(
@@ -272,7 +270,7 @@ class _HomeState extends State<Home> {
 
   Widget buildTopWidget(List<Destination> destinations) {
     return Padding(
-        padding: EdgeInsets.only(top: 10, bottom: 10),
+        padding: const EdgeInsets.only(top: 10, bottom: 10),
         child: Column(
           children: [
             Padding(
@@ -280,7 +278,7 @@ class _HomeState extends State<Home> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 crossAxisAlignment: CrossAxisAlignment.end,
-                children: [
+                children: const [
                   Expanded(
                     child: Text(
                       'Top Destinations',
@@ -293,7 +291,7 @@ class _HomeState extends State<Home> {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(
+                    padding: EdgeInsets.only(
                       left: 10.0,
                     ),
                     child: Icon(

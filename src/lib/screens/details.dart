@@ -13,15 +13,13 @@ class Details extends StatelessWidget {
         body: SingleChildScrollView(
           child: Padding(
             padding: const EdgeInsets.all(30.0),
-            child: Container(
-              child: Column(
-                children: [
-                  buildHeaderWidget(context),
-                  buildAboutWidget(),
-                  buildGalleryWidget(),
-                  buildBookWidget(context),
-                ],
-              ),
+            child: Column(
+              children: [
+                buildHeaderWidget(context),
+                buildAboutWidget(),
+                buildGalleryWidget(),
+                buildBookWidget(context),
+              ],
             ),
           ),
         ),
@@ -61,7 +59,7 @@ class Details extends StatelessWidget {
                   borderRadius: BorderRadius.circular(20),
                   color: Colors.blue[200],
                 ),
-                child: Center(
+                child: const Center(
                   child: Icon(
                     Icons.arrow_back_ios_outlined,
                     color: Colors.white,
@@ -80,7 +78,7 @@ class Details extends StatelessWidget {
                 borderRadius: BorderRadius.circular(20),
                 color: Colors.blue[200],
               ),
-              child: Center(
+              child: const Center(
                 child: Icon(
                   Icons.share,
                   color: Colors.white,
@@ -89,9 +87,9 @@ class Details extends StatelessWidget {
             ),
           ),
           Positioned(
-            bottom: 70,
-            left: 15,
-            child: Container(
+            bottom: 72,
+            left: 16,
+            child: SizedBox(
               width: 200,
               child: Text(
                 destination.name,
@@ -103,7 +101,7 @@ class Details extends StatelessWidget {
                   shadows: [
                     Shadow(
                         color: Colors.black.withOpacity(0.25),
-                        offset: Offset(6, 6),
+                        offset: const Offset(6, 6),
                         blurRadius: 12),
                   ],
                 ),
@@ -111,22 +109,22 @@ class Details extends StatelessWidget {
             ),
           ),
           Positioned(
-            bottom: 30,
-            left: 15,
+            bottom: 32,
+            left: 16,
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.baseline,
               textBaseline: TextBaseline.alphabetic,
               children: [
                 Text(
                   '\$' + destination.price.toStringAsFixed(0),
-                  style: TextStyle(
+                  style: const TextStyle(
                     color: Colors.white,
                     fontFamily: 'RockoFLF',
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                Text(
+                const Text(
                   '/person',
                   style: TextStyle(
                     color: Colors.white,
@@ -137,7 +135,7 @@ class Details extends StatelessWidget {
             ),
           ),
           Positioned(
-            bottom: 30,
+            bottom: 32,
             right: 16,
             child: Container(
               decoration: BoxDecoration(
@@ -149,7 +147,7 @@ class Details extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
+                children: const [
                   Icon(
                     Icons.star,
                     color: Colors.amber,
@@ -179,8 +177,8 @@ class Details extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Padding(
-          padding: const EdgeInsets.symmetric(
+        const Padding(
+          padding: EdgeInsets.symmetric(
             vertical: 6.0,
           ),
           child: Text(
@@ -200,7 +198,7 @@ class Details extends StatelessWidget {
           ),
           child: Text(
             destination.about,
-            style: TextStyle(
+            style: const TextStyle(
               color: Colors.grey,
               fontFamily: 'RockoFLF',
               fontSize: 14,
@@ -216,8 +214,8 @@ class Details extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Padding(
-          padding: const EdgeInsets.symmetric(
+        const Padding(
+          padding: EdgeInsets.symmetric(
             vertical: 6.0,
           ),
           child: Text(
@@ -264,7 +262,7 @@ class Details extends StatelessWidget {
                             )
                           : Container(),
                       (i + 1 == 4)
-                          ? Positioned(
+                          ? const Positioned(
                               child: Center(
                                 child: Text(
                                   '+6',
@@ -310,7 +308,7 @@ class Details extends StatelessWidget {
             padding: const EdgeInsets.all(8.0),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: [
+              children: const [
                 Spacer(),
                 Text(
                   'Book now',

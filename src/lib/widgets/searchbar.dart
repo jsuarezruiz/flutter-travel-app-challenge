@@ -6,7 +6,7 @@ class SearchBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.all(
           Radius.circular(12.0),
@@ -19,15 +19,15 @@ class SearchBar extends StatelessWidget {
           color: Colors.grey[300],
         ),
         decoration: InputDecoration(
-          contentPadding: EdgeInsets.all(10.0),
+          contentPadding: const EdgeInsets.all(10.0),
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(5.0),
-            borderSide: BorderSide(
+            borderSide: const BorderSide(
               color: Colors.white,
             ),
           ),
           enabledBorder: OutlineInputBorder(
-            borderSide: BorderSide(
+            borderSide: const BorderSide(
               color: Colors.white,
             ),
             borderRadius: BorderRadius.circular(5.0),
@@ -37,7 +37,7 @@ class SearchBar extends StatelessWidget {
             Icons.search,
             color: Colors.grey,
           ),
-          hintStyle: TextStyle(
+          hintStyle: const TextStyle(
             fontFamily: 'RockoFLF',
             fontSize: 14.0,
             color: Colors.grey,

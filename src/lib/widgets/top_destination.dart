@@ -12,7 +12,7 @@ class TopDestination extends StatelessWidget {
       children: [
         Container(
           height: 80,
-          decoration: new BoxDecoration(
+          decoration: const BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.all(
               Radius.circular(12.0),
@@ -42,19 +42,19 @@ class TopDestination extends StatelessWidget {
                     children: [
                       Text(
                         destination.place,
-                        style: TextStyle(
+                        style: const TextStyle(
                           color: Colors.black,
                           fontFamily: 'RockoFLF Bold',
                           fontSize: 16,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
                       Text(
                         destination.name,
-                        style: TextStyle(
+                        style: const TextStyle(
                           fontFamily: 'RockoFLF',
                           color: Colors.grey,
                         ),
@@ -66,7 +66,7 @@ class TopDestination extends StatelessWidget {
             ),
           ),
         ),
-        SizedBox(
+        const SizedBox(
           width: 20.0,
         ),
       ],
